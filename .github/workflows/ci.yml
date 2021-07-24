@@ -45,6 +45,7 @@ jobs: # 工作流
           FTP_PASSWORD: ${{ secrets.ftp_password }}
           LOCAL_DIR: docs
           REMOTE_DIR: /opt/111test
+          ARGS: --delete --transfer-all --exclude=logreport --verbose
 
 #      - name: Build and Deploy # 步骤3 （只提交到github可以使用这个步骤）
 #        uses: JamesIves/github-pages-deploy-action@4.1.1 # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
