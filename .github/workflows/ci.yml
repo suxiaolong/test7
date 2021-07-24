@@ -35,7 +35,7 @@ jobs: # 工作流
           username: ftpxiaosu
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./docs/
-          server-dir: /home/ftpxiaosu/opt/
+          server-dir: opt/
 # 提取打包发布，可以在一个仓库里
 
 
