@@ -37,7 +37,7 @@ jobs: # 工作流
           local-dir: ./docs/
           server-dir: /home/xiaosu/
           protocol: sftp
-          port: 10088
+          port: 22
 # 提取打包发布，可以在一个仓库里
 
 
