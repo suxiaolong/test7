@@ -31,8 +31,8 @@ jobs: # 工作流
       - name: Sync files # 步骤3 （只提交到github可以使用这个步骤）
         uses: SamKirkland/FTP-Deploy-Action@4.0.1-patch # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
         with:
-          server: 118.25.22.194
-          username: ftpxiaosu
+          server: 119.23.224.32
+          username: xiaosu
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./docs/
           server-dir: /
