@@ -36,6 +36,8 @@ jobs: # 工作流
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./docs/
           server-dir: /home/xiaosu/
+          protocol: ftps
+          port: 10088
 # 提取打包发布，可以在一个仓库里
 
 
