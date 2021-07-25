@@ -28,14 +28,26 @@ jobs: # 工作流
       #          GITHUB_TOKEN: ${{ secrets.my_su_token }} # toKen私密变量
       #        run: npm install && npm run deploy
 
-      - name: Sync files # 步骤3 （只提交到github可以使用这个步骤）
-        uses: SamKirkland/FTP-Deploy-Action@4.0.1-patch # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
+#      - name: Sync files # 步骤3 （只提交到github可以使用这个步骤）
+#        uses: SamKirkland/FTP-Deploy-Action@4.0.1-patch # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
+#        with:
+#          server: 118.25.22.194
+#          username: xiaosu
+#          password: ${{ secrets.FTP_PASSWORD }}
+#          local-dir: ./docs/
+#          server-dir: /home/xiaosu/
+
+      - name: deploy file
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          server: 118.25.22.194
-          username: xiaosu
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./docs/
-          server-dir: /home/xiaosu/
+          username: 'root'
+          server: '118.25.22.194'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './docs/*'
+          remote_path: '/home/xiaosu'
+          args: '-o ConnectTimeout=5'
+
+
 # 提取打包发布，可以在一个仓库里
 
 
